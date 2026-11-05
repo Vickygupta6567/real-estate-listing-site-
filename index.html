@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Griha Estates – Find your next home</title>
+<meta name="description" content="Browse apartments, villas, plots and shops across Haryana, Delhi NCR. Filter by price, area and type, save favourites and send an inquiry.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#top">Griha Estates</a>
+  <nav><a class="hide" href="#listings">Properties</a><a class="hide" href="#why">Why us</a><a class="hide" href="#inquiry">Inquiry</a>
+  <button class="savedlink" id="savedBtn" aria-label="Show saved favourites">♥ Saved (<span id="favCount">0</span>)</button></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Find a home that fits your budget and your neighbourhood</h1>
+    <p>Browse verified apartments, villas, plots and shops across Haryana and Delhi NCR. Filter by price, area and type, save the ones you like, and ask us anything.</p>
+    <a class="btn" href="#listings">Browse properties</a>
+    <div class="stats"><div><b>12</b><span>Listings</span></div><div><b>6</b><span>Cities</span></div><div><b>4</b><span>Property types</span></div></div>
+  </div>
+  <img id="heroImg" alt="Illustration of a modern house at sunset">
+</div></div>
+
+<div class="wrap" id="listings">
+  <div class="filters">
+    <div class="fgrid">
+      <div><label for="q">Search</label><input id="q" type="search" placeholder="Title or locality"></div>
+      <div><label for="city">Location</label><select id="city"></select></div>
+      <div><label for="type">Property type</label><select id="type"><option value="">All types</option><option>Apartment</option><option>Villa</option><option>Plot</option><option>Commercial</option></select></div>
+      <div><label for="area">Minimum area</label><select id="area"><option value="0">Any size</option><option value="500">500 sq ft+</option><option value="1000">1,000 sq ft+</option><option value="1500">1,500 sq ft+</option><option value="2500">2,500 sq ft+</option></select></div>
+      <div><label for="beds">Bedrooms</label><select id="beds"><option value="0">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select></div>
+      <div><label for="price">Max price: <b id="priceOut"></b></label><input id="price" type="range" min="1000000" max="60000000" step="500000" value="60000000"></div>
+      <div><label for="sort">Sort by</label><select id="sort"><option value="">Newest</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option><option value="big">Largest area</option></select></div>
+    </div>
+    <div class="frow"><span class="count" id="count"></span><button class="btn alt" id="reset" type="button">Clear filters</button></div>
+  </div>
+</div>
+
+<section><div class="wrap">
+  <div class="head"><h2 id="listTitle">Available properties</h2></div>
+  <div class="grid" id="grid" aria-live="polite"></div>
+</div></section>
+
+<section class="why" id="why"><div class="wrap">
+  <h2>Buying should not feel like guesswork</h2>
+  <div class="cols">
+    <div><h3>Verified listings</h3><p>Every property is checked for ownership papers and a clear title before it appears here.</p></div>
+    <div><h3>Honest pricing</h3><p>Prices are shown upfront, with area and rate so you can compare easily.</p></div>
+    <div><h3>Site visits on your time</h3><p>Send an inquiry and we call back the same day to fix a visit.</p></div>
+    <div><h3>Help with paperwork</h3><p>Registry, loan and stamp duty guidance from start to finish.</p></div>
+  </div>
+</div></section>
+
+<section id="inquiry"><div class="wrap contact">
+  <div><h2>Interested in a property?</h2><p style="margin-top:12px;color:var(--mute)">Fill in the form and our team will contact you within one working day.</p>
+  <p style="margin-top:18px"><b>Office</b><br>Model Town, Panipat, Haryana<br><b>Phone</b> +91 98765 43210<br><b>Email</b> hello@grihaestates.example</p></div>
+  <form id="form" novalidate>
+    <div class="two">
+      <div><label for="name">Full name</label><input id="name" autocomplete="name"><div class="err" data-e="name"></div></div>
+      <div><label for="phone">Phone number</label><input id="phone" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile"><div class="err" data-e="phone"></div></div>
+    </div>
+    <div><label for="email">Email</label><input id="email" type="email" autocomplete="email"><div class="err" data-e="email"></div></div>
+    <div><label for="prop">Property</label><select id="prop"></select></div>
+    <div><label for="msg">Message</label><textarea id="msg" rows="4" placeholder="Tell us what you are looking for"></textarea><div class="err" data-e="msg"></div></div>
+    <button class="btn" type="submit">Send inquiry</button>
+    <div id="done"></div>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><b style="color:#fff">Griha Estates</b><br>Student project for Generative AI, NIAT × Geeta University.</div>
+  <div><a href="#listings">Properties</a><a href="#inquiry">Inquiry</a><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a><a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a><br>© 2026 Griha Estates</div>
+</div></footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Property details"><div class="mbox" id="mbox"></div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
